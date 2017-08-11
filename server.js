@@ -3,10 +3,11 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
+var mongoose = require("mongoose");
 
 
 // REQUIRED MODELS
-var Note = require("./models/Note.js");
+var Note = require("./models/Comment.js");
 var Article = require("./models/Article.js");
 
 // REQUIRED SCRAPING TOOLS
@@ -52,7 +53,7 @@ app.get("/scrape", function(req, res) {
 	request("http://www.cnn.com/world", function (error, response, html) {
 
 		// Load HTML into cheerio var
-		var $ = cherrio.load(html);
+		var $ = cheerio.load(html);
 
 		// Grab Article Title (h3)
 		$(".cd_headline").each(function(i, element) {
@@ -90,10 +91,10 @@ app.get("/scrape", function(req, res) {
 // DISPLAY SAVED ARTICLES IN MongoDB
 app.get("/articles", function(req, res) {
 
-	Article.findAll({}, function(error, doc) {
+	Article.find({}, function(error, doc) {
 
 		if (err) {
-			console.log("ERROR FINDING ARTICLES: ", err);
+			console.log("ERROR FINDING ARTICLES: ", error);
 		}
 		else {
 			console.lopg("ARTICLES PULLED FROM DB");
