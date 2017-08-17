@@ -1,5 +1,5 @@
 // REQUIRED PACKAGES
-request = require("request");
+var request = require("request");
 
 // REQUIRED SCRAPING TOOLS
 var request = require("request");
