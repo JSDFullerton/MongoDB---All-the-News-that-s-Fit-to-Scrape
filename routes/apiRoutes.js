@@ -1,7 +1,4 @@
-// REQUIRED PACKAGES
-var request = require("request");
-
-// REQUIRED SCRAPING TOOLS
+// REQUIRED PACKAGES & SCRAPING TOOLS
 var request = require("request");
 var cheerio = require("cheerio");
 

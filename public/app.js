@@ -12,7 +12,7 @@ $.getJSON("/articles", function(data) {
 
 
 // WHEN USER CLICKS on ARTICLES
-$(document).on("click", "p", function() {
+$(document).on("click", "Articles", function() {
 
 	// Empty Current Notes Section
 	$("#notes").empt();
@@ -99,6 +99,10 @@ $(document).on("click", "#saveNote", function() {
 
 
 });// close save note click funct
+
+
+// RENDER MAIN page
+
 
 
 

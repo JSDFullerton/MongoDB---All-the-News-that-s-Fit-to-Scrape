@@ -15,9 +15,24 @@
 			required: true
 		},
 
+		summary: {
+			type: String
+		},
+
 		link: {
 			type: String,
-			required: true
+			required: true,
+			default: "/"
+		},
+
+		createdAt: {
+			type: Date,
+			default: Date.now
+		},
+
+		saved: {
+			type: Boolean,
+			default: false
 		},
 
 		// Save note's ObjID, refer to Note Model
@@ -31,6 +46,9 @@
 // CREATE Article MODEL w/ ArticleSchema
 var Article = mongoose.model("Article", ArticleSchema);
 
-
 // EXPORT MODEL
 module.exports = Article;
+
+
+
+

@@ -17,6 +17,11 @@
 
 		body: {
 			type: String
+		},
+
+		createdAt: {
+			type: Date,
+			default: Date.now
 		}
 	});// close CommentSchema var
 
